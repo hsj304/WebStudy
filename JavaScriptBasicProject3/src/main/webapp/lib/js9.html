@@ -1,0 +1,56 @@
+<!-- onclick -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	let i=0
+	window.onload=()=>{
+		let r=document.querySelector("#read")
+		r.onmouseover=function(){
+			r.style.cursor="pointer"
+		}
+		r.onmouseout=function(){
+			r.style.cursor="none"
+		}
+		r.onclick=function(){
+			if(i==0){
+				let ss=document.querySelector("#s")
+				ss.style.display='';
+				r.textContent="닫기"
+				i=1
+			} else {
+				let ss=document.querySelector("#s")
+				ss.style.display='none';
+				r.textContent="더보기"
+				i=0
+			}
+		}
+		document.querySelector("#click").onclick=function(){
+			return false;
+		}
+	}
+</script>
+<body>
+	<a href="http://www.naver.com" id=click>Naver</a>
+	<p>
+	<pre>
+올 여름 최악의 무더위가 예보되고 있는 가운데 전기요금 인상으로 서민들의 냉방비 폭탄이 우려되고 있다.
+
+이런 가운데 전보다 전기를 적게 쓰는 만큼 요금을 깎아주는 한국전력의 ‘에너지 캐시백’ 신청이 많이 늘어났다.
+
+한전에 따르면 지난 18일 정오 기준 주택용 에너지 캐시백 참여 세대가 21만6921세대로 20만세대를 돌파했다.
+<span style=display:none id=s>
+한전이 지난해 에너지 캐시백 제도를 도입하고 나서 올해 상반기까지 누적 참여 세대는 5만2490세대였는데 
+올 하반기 시행을 앞두고 지난 7일부터 온라인 접수를 시작한 지 11일 만에 신규 참여 규모가 20만 세대를 넘어섰다.
+
+온라인 접수 시작 후 하루 평균 1만8천세대 넘게 가입 중이다.
+
+한전은 올여름 날씨가 덥고 습할 것으로 예상되고, 전기요금도 올라 냉방비 부담이 커짐에 따라 에너지 절약에 관한 
+관심이 부쩍 높아져 에너지 캐시백 신청 가구가 증가했다고 분석했다.
+</span><span id="read">더보기</span>
+	</pre>
+</body>
+</html>
